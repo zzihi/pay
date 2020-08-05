@@ -14,7 +14,7 @@ public class Pay {
     private String payStatus;
     private Long tbId;
 
-    @PrePersist
+    @PostPersist
     public void onPostPersist(){
         System.out.println("33333333333333333");
         Payed payed = new Payed();
