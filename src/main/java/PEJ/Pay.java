@@ -20,12 +20,6 @@ public class Pay {
         BeanUtils.copyProperties(this, payed);
         payed.setPayId(this.id!=null?this.id:1);
         payed.publishAfterCommit();
-
-        try {
-            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @PreUpdate
