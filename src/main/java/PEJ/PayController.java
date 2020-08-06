@@ -17,8 +17,11 @@ import java.util.Optional;
 
     @RequestMapping(method=RequestMethod.POST, path="/pays")
     public void pay(@RequestBody Pay pay){
-        System.out.println("2222222222222222222");
-
+        try {
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //         Pay payed = payRepository.findByTbId(pay.getTbId());
          pay.setPayStatus("PAYED");
          payRepository.save(pay);
